@@ -22,7 +22,7 @@ product-properties:
   .properties.credhub_internal_provider_keys:
     value:
     - key:
-        secret: ((credhub-secret))
+        secret: ((credhub-key))
       name: Key
       primary: true
   .properties.haproxy_forward_tls:
