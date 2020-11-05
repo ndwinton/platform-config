@@ -32,6 +32,17 @@ networks-configuration:
       gateway: 10.0.8.1
       iaas_identifier: sandbox-network/sandbox-services-subnet/us-central1
       reserved_ip_ranges: 10.0.8.1-10.0.8.9
+  - name: pas
+    subnets:
+    - availability_zone_names:
+      - us-central1-a
+      - us-central1-b
+      - us-central1-c
+      cidr: 10.0.4.0/24
+      dns: 169.254.169.254
+      gateway: 10.0.4.1
+      iaas_identifier: sandbox-network/sandbox-pas-subnet/us-central1
+      reserved_ip_ranges: 10.0.4.1-10.0.4.9
 properties-configuration:
   director_configuration:
     ntp_servers_string: 169.254.169.254
