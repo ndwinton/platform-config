@@ -4,4 +4,5 @@ pivnet-file-glob: "ops-manager-gcp-*.yml"
 pivnet-product-slug: ops-manager
 product-version-regex: ^2\.8\..*$
 blobstore-bucket: ((bucket))
-
+gcs-project-id: cso-education-nwinton
+gcs-service-account-json: ((json_key))

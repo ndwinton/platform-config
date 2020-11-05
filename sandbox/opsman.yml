@@ -1,0 +1,15 @@
+opsman-configuration:
+  gcp:
+    boot_disk_size: 100
+    custom_cpu: 4
+    custom_memory: 16
+    gcp_service_account: ((opsman-service-account-key))
+    project: cso-education-nwinton
+    public_ip: 35.224.134.228
+    region: us-central1
+    ssh_public_key: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC2jwM9zXqI8sayvTxFs/cvgf/hDgZHzHEudaJFUheJoFKuHn5J4dJinY6FMjdGqcESxV/jKAH5Zz2jEVNTp9AI3T7KdrDNazpG8S+XEqrEboeMvL/UtP9y4ZEonfL9Z+ZDTDfkEHKB5edlS2Q0/imMB8606EZR2/PJKK4w8KG6fjtJXb4wPQOkxhDAtouh40QMGSfRFSOueJvHZRZ7b60Bgt5VnAPLjx73UOjNMB0TEmkew2Xv27JwpYKGsFtlc0fEXUh9JB8TW0yHhPS34WMbMYb7qZmn0FGs0oi5Eg250LL/dT96gM21fvDW5eRoL22wZzexltXcPGAnZJbePQyP98ENsQzgkKuJeYkSNW3QOHpbNuwEptxhfx5D8jV5uuwFgwG3PZuIh/T1tpZQtKcRBlSn4FHyH4iTdML3F1CNBUylhwfABOXR6GDGEpnAnz7bkQaoBqYlkOIejEz6HcIlG9nndVkzUoj1Gb8thytVar+WGcS8mytqykLFCMlsqlbvCcLeI3V9KJ7iCI+G5cUu5gbKIRQ0d7j8a8fkJ7LbLnXxOGvKSjGlMhgz/jjxr4sH1mCe9SDT5QVTCGwE7dvLfs6ngbbVD6zSUZLrF6g5AK7P9vRm9gPsgoj5QJ9L80qI/y6Tk95tbeX8Sf5bDAOipvlXsnwHuBaj2aWVpo1oUw==
+    tags: sandbox-ops-manager
+    vm_name: sandbox-ops-manager-vm
+    vpc_subnet: sandbox-management-subnet
+    zone: us-central1-a
