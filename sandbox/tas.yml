@@ -1,0 +1,61 @@
+network-properties:
+  network:
+    name: pas
+  other_availability_zones:
+  - name: us-central1-a
+  - name: us-central1-b
+  - name: us-central1-c
+  service_network:
+    name: services
+  singleton_availability_zone:
+    name: us-central1-a
+product-name: cf
+product-properties:
+  .cloud_controller.apps_domain:
+    value: ((apps-domain))
+  .cloud_controller.system_domain:
+    value: ((system-domain))
+  .ha_proxy.skip_cert_verify:
+    value: true
+  .mysql_monitor.recipient_email:
+    value: cf-infra@pivotal.io
+  .properties.credhub_internal_provider_keys:
+    value:
+    - key:
+        secret: ((credhub-secret))
+      name: Key
+      primary: true
+  .properties.haproxy_forward_tls:
+    value: disable
+  .properties.networking_poe_ssl_certs:
+    value:
+    - certificate:
+        cert_pem: ((tls-cert.certificate))
+        private_key_pem: ((tls-cert.private_key))
+      name: Certificate
+  .properties.security_acknowledgement:
+    value: X
+  .properties.system_blobstore:
+    value: internal
+  .properties.tcp_routing:
+    value: enable
+  .properties.tcp_routing.enable.reservable_ports:
+    value: 1024-1123
+  .uaa.service_provider_key_credentials:
+    value:
+      cert_pem: ((tls-cert.certificate))
+      private_key_pem: ((tls-cert.private_key))
+resource-config:
+  compute:
+    instances: 3
+  control:
+    elb_names:
+    - tcp:sandbox-ssh-lb
+  router:
+    elb_names:
+    - http:sandbox-http-lb
+    - tcp:sandbox-websocket-lb
+    instances: 1
+  tcp_router:
+    elb_names:
+    - tcp:sandbox-tcp-lb
