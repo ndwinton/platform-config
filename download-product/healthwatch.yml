@@ -5,4 +5,6 @@ pivnet-product-slug: p-healthwatch
 product-version-regex: ^1\.8\..*$
 blobstore-bucket: ((bucket))
 stemcell-iaas: google
-
+gcs-project-id: cso-education-nwinton
+gcs-service-account-json: ((json_key))
+blobstore-stemcell-path: /healthwatch-stemcell
